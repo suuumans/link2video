@@ -16,8 +16,8 @@ export default defineConfig({
       },
       workbox: {
         cleanupOutdatedCaches: true,
-        // tailored globPatterns to see if we can avoid the bad file, or use globIgnores
-        globIgnores: ['**/index-*.css'] 
+        // Explicitly include only safe assets, excluding CSS to bypass the build error
+        globPatterns: ['**/*.{js,html,ico,png,svg,webmanifest}'],
       },
       manifest: {
         name: 'Link2Video',
