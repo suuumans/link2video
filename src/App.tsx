@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Layout } from './components/Layout';
 import { SEO } from './components/SEO';
 import { InputSection } from './components/InputSection';
+import { Features } from './components/Features';
 import { VideoPlayer } from './components/VideoPlayer';
 
 function App() {
@@ -25,7 +26,10 @@ function App() {
             For this simple app, keeping it centered is nicer. */}
         
         {!videoUrl ? (
-          <InputSection onPlay={handlePlay} />
+          <>
+            <InputSection onPlay={handlePlay} />
+            <Features />
+          </>
         ) : (
             <div className="w-full flex flex-col items-center animate-fade-in">
                 <VideoPlayer url={videoUrl} onClose={handleClose} />

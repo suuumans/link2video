@@ -18,12 +18,14 @@ export const InputSection = ({ onPlay }: InputSectionProps) => {
   return (
     <section className="flex flex-col items-center justify-center w-full gap-8 text-center animate-slide-up">
       <div className="space-y-4">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-br from-white to-zinc-500 bg-clip-text text-transparent">
-          Link2Video
+      <div className="space-y-4">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter bg-gradient-to-br from-white to-zinc-500 bg-clip-text text-transparent">
+          Play Any Video Link
         </h1>
         <p className="text-zinc-400 text-lg md:text-xl max-w-xl mx-auto">
-           Universal Video Player for the Modern Web. <br /> Support for HLS, MP4, WebM, and more.
+           The Universal Video Player for the Modern Web. <br /> Support for HLS, MP4, WebM, and more.
         </p>
+      </div>
       </div>
 
       <form onSubmit={handleSubmit} className="w-full max-w-2xl relative group">

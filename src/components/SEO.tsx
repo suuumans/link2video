@@ -10,6 +10,9 @@ export const SEO = ({ title = 'Link2Video - Universal Video Player', description
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content="Video Player, HLS Player, M3U8 Player, MKV Player, Online Video Player, Stream Tester, Native Video Player, link to video, video player, download video" />
+      <meta name="robots" content="index, follow" />
+      
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="video.other" />
