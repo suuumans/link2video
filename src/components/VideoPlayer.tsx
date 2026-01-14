@@ -128,14 +128,30 @@ export const VideoPlayer = ({ url, onClose }: VideoPlayerProps) => {
             <MediaProvider>
               <Poster className="vds-poster" />
             </MediaProvider>
-            <DefaultVideoLayout icons={defaultLayoutIcons} />
+            {/* 
+                DefaultVideoLayout comes with a Settings menu (gear icon) by default.
+                It handles Quality, Speed, and Captions automatically if the stream supports it.
+            */}
+            <DefaultVideoLayout 
+                icons={defaultLayoutIcons} 
+            />
           </MediaPlayer>
         )}
       </div>
 
-      <div className="mt-6 flex justify-between items-center px-4 text-sm text-zinc-500">
-        <p>Now Playing {useNativePlayer && "(Native Mode)"}</p>
-        <p className="font-mono text-xs opacity-50 truncate max-w-[200px]">{url}</p>
+      <div className="mt-6 flex flex-col md:flex-row justify-between items-start md:items-center px-4 text-sm text-zinc-500 gap-2">
+        <div className="flex flex-col gap-1">
+            <p className="flex items-center gap-2">
+                Now Playing {useNativePlayer && <span className="text-brand-accent">(Native Mode)</span>}
+            </p>
+            {useNativePlayer && url.toLowerCase().includes('.mkv') && (
+                <p className="text-amber-500 flex items-center gap-1.5 text-xs bg-amber-500/10 px-2 py-1 rounded-md border border-amber-500/20">
+                    <AlertCircle className="w-3 h-3" />
+                    <span>MKV file detected. If audio is missing, your browser may not support the codec.</span>
+                </p>
+            )}
+        </div>
+        <p className="font-mono text-xs opacity-50 truncate max-w-[200px] md:max-w-md" title={url}>{url}</p>
       </div>
     </div>
   );

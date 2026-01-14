@@ -1,5 +1,5 @@
 
-import { Github, Download } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 export const Header = () => {
@@ -43,6 +43,7 @@ export const Header = () => {
                     </button>
                 )}
                 
+                {/*
                 <a 
                     href="https://github.com/suuumans/link2video" 
                     target="_blank" 
@@ -51,6 +52,7 @@ export const Header = () => {
                 >
                     <Github className="w-6 h-6" />
                 </a>
+                */}
             </div>
         </header>
     );
